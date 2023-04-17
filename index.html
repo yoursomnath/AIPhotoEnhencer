@@ -1,0 +1,59 @@
+<!-- Created By Codenath -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>Ai Photo Enhencer</title>
+</head>
+<body>
+  <h1 class="h1">Ai Photo Enhencer</h1>
+  <div class="container">
+    <h1 class="header">Upload Your Photo</h1>
+    <input type="file" class="file" required>
+    <input type="submit" value="Upload" class="up-btn">
+  </div>
+  <div class="follow">
+    <a href="https://www.youtube.com/@codenath"><i class="fa-brands fa-youtube"></i></a>
+    <a href="https://github.com/yoursomnath"><i class="fa-brands fa-github"></i></a>
+    <a href="https://www.instagram.com/pure_somnath/"><i class="fa-brands fa-instagram"></i></a>
+  </div>
+  <div class="enh-photo-div">
+    <div class="img-div">
+      <div class="header2">Please Wait We are Improving Your Photo</div>
+      <div class="en-img">
+        <div class="loading-fx"></div>
+      </div>
+    </div>
+</body>
+  <script type="text/javascript">
+    let btn = document.querySelector(".up-btn");
+    let eImg = document.querySelector(".en-img");
+    let imgDiv = document.querySelector(".enh-photo-div");
+    let inpFile = document.querySelector(".file");
+    let loadAnim = document.querySelector(".loading-fx");
+    let txt = document.querySelector(".header2");
+    let sfx = new Audio("Laughing.mp3");
+    btn.addEventListener("click", event=>{
+      
+      if (inpFile.files.length == 0) {
+          alert("No File Chosen") 
+      }
+      else {
+          imgDiv.style.display = "flex";
+          var dj = setTimeout(enhence, 5000)
+          function enhence(){
+            // console.log("hello");
+            eImg.style.backgroundImage = "url(enhenced.jpg)";
+            loadAnim.style.display = "none";
+            txt.innerHTML = "Here Is Your enhenced Photo";
+            sfx.play();
+          }
+      }
+
+    })
+  </script>
+</html>
+    
